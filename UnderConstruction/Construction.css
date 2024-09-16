@@ -24,13 +24,3 @@ body {
     position: relative;
     display: inline-block;
 }
-
-.cat-image {
-    position: absolute;
-    top: -10px; /* Adjust this value to move the cat image vertically */
-    left: 76px; /* Adjust this value to move the cat image horizontally */
-    width: 15px; /* Adjust the width of the cat image */
-    height: auto; /* Maintain the aspect ratio */
-    pointer-events: none; /* Prevent the image from interfering with text selection */
-    filter: invert(1) brightness(1000%);
-}
