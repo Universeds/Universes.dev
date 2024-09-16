@@ -1,3 +1,0 @@
-RewriteOptions inherit
-ErrorDocument 404 /index.html
-RewriteEngine On
