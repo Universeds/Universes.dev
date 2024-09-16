@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "ChillFont";
+    src: url(../Fonts/LofiLifestyleRegular-2OM9v.ttf) format("truetype");
+}
+
+body {
+    background-color: #212121;
+    color: white;
+    font-family: "ChillFont", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #333333, transparent);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+main {
+    flex-grow: 1;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#portfolio {
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio-frame {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid #555555;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    background-color: #444444;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #666666;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px; /* Added for the 3D effect */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Pop out effect */
+    box-shadow: 0 100px 20px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-item-inner {
+    transform: rotateX(0deg) rotateY(0deg); /* Initial state */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.portfolio-item h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to top, #333333, transparent);
+}
+
+.heart {
+    color: red;
+}
