@@ -5,52 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cozy Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <body>
     <header>
         <h1>Uni's Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#contact">Contact</a>
+                    <ul class="dropdown-content">
+                        <li>
+                            <a href="mailto:biguniversess@gmail.com" class="email-link">
+                                <i class="fas fa-envelope"></i>
+                                <span class="original-text">Email</span>
+                                <span class="hover-text">Biguniversess@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.com/users/Biguniverses" class="discord-link">
+                                <i class="fab fa-discord"></i>
+                                <span class="original-text">Discord</span>
+                                <span class="hover-text">Biguniverses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="portfolio">
-            <h2>My Work</h2>
+            <h2>My Work :></h2>
             <div class="portfolio-frame">
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-title="Project One" data-description="This first project is about">
                         <h3>Project One</h3>
-                        <p>Project description...</p>
+                        <p>Short description...</p>
                     </div>
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-title="Project Two" data-description="Detailed description of Project Two.">
                         <h3>Project Two</h3>
-                        <p>Project description...</p>
+                        <p>Short description...</p>
                     </div>
-
-                    <div class="portfolio-item">
-                        <h3>Project One</h3>
-                        <p>Project description...</p>
-                    </div>
-
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-title="Project Three" data-description="Detailed description of Project Three.">
                         <h3>Project Three</h3>
-                        <p>Project description...</p>
+                        <p>Short description...</p>
                     </div>
-
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-title="Project Four" data-description="Detailed description of Project Four.">
                         <h3>Project Four</h3>
-                        <p>Project description...</p>
+                        <p>Short description...</p>
                     </div>
-                    <div class="portfolio-item">
+                    <div class="portfolio-item" data-title="Project Five" data-description="Detailed description of Project Five.">
                         <h3>Project Five</h3>
-                        <p>Project description...</p>
+                        <p>Short description...</p>
                     </div>
-                    <!-- Add more items as needed -->
                 </div>
             </div>
         </section>
@@ -59,6 +68,14 @@
     <footer>
         <p>Made with <span class="heart">&#10084;</span> by Universe</p>
     </footer>
+
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
