@@ -5,6 +5,51 @@ const modalTitle = document.getElementById('modalTitle');
 const modalDescription = document.getElementById('modalDescription');
 const closeModal = document.querySelector('.close');
 
+document.addEventListener("DOMContentLoaded", () => {
+    const textElements = document.querySelectorAll('.float-text');
+
+    textElements.forEach(el => {
+        const text = el.textContent;
+        el.innerHTML = text.split('').map(letter => {
+            const randomDelay = (Math.random() * 2).toFixed(2);
+            if (letter === ' ') {
+                return `<span>&nbsp;</span>`;
+            }
+            return `<span style="animation-delay: ${randomDelay}s;">${letter}</span>`;
+        }).join('');
+    });
+});
+
+document.querySelectorAll('.cat').forEach(cat => {
+    const animation = cat.getAttribute('data-animation');
+    const speed = cat.getAttribute('data-speed') || 1;
+
+    // Set animation speed
+    cat.style.setProperty('--speed', `${speed}s`);
+
+    // Switch background image and animation keyframes based on data attribute
+    switch (animation) {
+        case 'idle':
+            cat.style.backgroundImage = "url('Home\Images\Cat\Idle.png')";            cat.style.animationName = 'idle-animation';
+            break;
+        case 'walk':
+            cat.style.backgroundImage = "url('Home\Images\Cat\Walk.png')";
+            cat.style.animationName = 'walk-animation';
+            break;
+        case 'run':
+            cat.style.backgroundImage = "url('Home\Images\Cat\Run.png')";
+            cat.style.animationName = 'run-animation';
+            break;
+        case 'itch':
+            cat.style.backgroundImage = "url('Home\Images\Cat\Itch.png')";
+            cat.style.animationName = 'itch-animation';
+            break;
+        default:
+            cat.style.backgroundImage = "url('Home\Images\Cat\Idle.png')";
+            cat.style.animationName = 'idle-animation';
+    }
+});
+
 
 document.querySelectorAll('.portfolio-item').forEach(item => {
     item.addEventListener('mousemove', (e) => {
